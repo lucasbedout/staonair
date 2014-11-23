@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails StaOnAir: development" uuid="6e1ebba7-0fbe-4280-98b6-e0455aedfc75">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails StaOnAir: test" uuid="bd571db2-4c45-4cc0-9664-1bb4aa93c35d">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails StaOnAir: production" uuid="755b7208-c385-4611-b6dc-a1d7baaa7576">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails StaOnAir: default" uuid="338a0205-e8fc-4e1c-848b-43b0a4198040">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

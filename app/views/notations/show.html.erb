@@ -1,0 +1,32 @@
+<h2>
+  <strong><%= @notation.student %></strong>
+</h2>
+
+<p>
+
+  <% if @notation.mark.present? && @notation.mark >= 10 %>
+    <strong class="label label-info">
+  <% else %>
+    <strong class="label label-danger">
+  <% end %>
+        <%= @notation.mark.blank? ? 'No mark' : @notation.mark.to_s() + ' / 20' %></strong>
+    </strong>
+
+</p>
+
+<p>
+  <%= @notation.appreciation.blank? ? 'No appreciation yet' : @notation.appreciation %>
+</p>
+
+<% if @questions.any? %>
+    <%= render 'questions/table' %>
+<% end %>
+
+<div class="row">
+  <%= link_to 'New question', new_notation_question_path(@notation), :class => 'btn btn-primary' %>
+</div>
+
+<div class="row">
+    <%= link_to 'Edit', edit_notation_path(@notation) %> |
+    <%= link_to 'Back', :back %>
+</div>

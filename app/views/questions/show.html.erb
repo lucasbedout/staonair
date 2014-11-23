@@ -1,0 +1,12 @@
+<p>
+  <strong>Mark:</strong>
+  <%= @question.mark %> on <%= @question.points %>
+</p>
+
+<p>
+  <strong>Appreciation:</strong>
+  <%= @question.comment %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', :back %>

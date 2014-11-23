@@ -1,0 +1,27 @@
+
+/* Form controls */
+
+// Add margin to bootstrap form-group
+.row {
+  margin: 20px 0;
+}
+
+.small-field {
+  max-width: 60px !important;
+}
+
+.large-field {
+  min-width: 300px;
+}
+
+/* HTML Elements */
+
+table.table {
+  th {
+    text-align: center;
+  }
+}
+
+#alerts {
+  text-align: center;
+}

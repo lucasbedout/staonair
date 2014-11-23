@@ -1,0 +1,27 @@
+<p>
+  <h2><%= @exam.course %> - <%= @exam.exam_type %></h2>
+</p>
+
+<p>
+  <strong>Average  </strong>
+  <span class="label label-info"><%= @exam.average.blank? ? 'No mark' : @exam.average %></span>
+
+  <strong>Max  </strong>
+  <span class="label label-success"><%= @exam.max.blank? ? 'No mark' : @exam.max %></span>
+
+  <strong>Min  </strong>
+  <span class="label label-danger"><%= @exam.min.blank? ? 'No mark' : @exam.min %></span>
+</p>
+
+<% if @notations.any? %>
+    <%= render 'notations/table' %>
+<% end %>
+
+<div class="row">
+  <%= link_to 'New notation',  new_exam_notation_path(@exam), :class => 'btn btn-primary' %>
+  <%= link_to 'Close exam',  exam_validate_path(@exam), { :class => 'btn btn-success', :id => 'validate-button', data: { confirm: 'Are you sure?' } } %>
+</div>
+<div class="row">
+  <%= link_to 'Edit', edit_exam_path(@exam) %> |
+  <%= link_to 'Back', exams_path %>
+</div>

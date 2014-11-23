@@ -1,0 +1,32 @@
+<%= form_for @notation, :html => { :class => 'form-inline' } do |f| %>
+  <% if @notation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@notation.errors.count, "error") %> prohibited this notation from being saved:</h2>
+
+      <ul>
+      <% @notation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag(:exam_id, params[:exam_id]) %>
+
+  <div class="row">
+    <%= f.label :student %><br>
+    <%= f.number_field :student, :class => 'form-control' %>
+  </div>
+  <div class="row">
+    <%= f.label :mark %><br>
+    <%= f.number_field :mark, :class => 'form-control small-field' %>
+  </div>
+
+  <div class="row">
+    <%= f.label :appreciation %><br>
+    <%= f.text_area :appreciation, :class => 'form-control large-field' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

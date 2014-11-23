@@ -1,0 +1,31 @@
+<%= form_for @exam, :html => { :class => 'form-inline' } do |f| %>
+  <% if @exam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
+
+      <ul>
+      <% @exam.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <%= f.label :course %><br>
+    <%= f.text_field :course, :class => 'form-control' %>
+  </div>
+  <div class="row">
+    <%= f.label :exam_type %><br>
+    <%= f.text_field :exam_type, :class => 'form-control' %>
+  </div>
+  <div class="row">
+    <%= f.label :nb_questions %><br>
+    <%= f.number_field :nb_questions, :class => 'form-control small-field' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Save', :class => 'btn btn-primary' %>
+  </div>
+
+<% end %>
