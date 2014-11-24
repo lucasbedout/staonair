@@ -1,5 +1,4 @@
-$(function() {
-
+var f = function() {
     /* Live notations filtering */
     $("#filter").keyup(function(){
 
@@ -20,6 +19,8 @@ $(function() {
         });
 
     });
+}
 
-});
+$(document).ready(f);
+$(document).on('page:load', f);
 
