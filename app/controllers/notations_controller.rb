@@ -1,6 +1,7 @@
 class NotationsController < ApplicationController
   before_action :set_notation, only: [:show, :edit, :update, :destroy]
   after_action :set_exam_stats, only: [:create, :update, :destroy]
+  before_action :user_validated
 
   # GET /notations
   # GET /notations.json

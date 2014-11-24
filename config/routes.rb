@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
+  get 'users' => 'validation#index'
+  get 'users/:user_id/validate' => 'validation#validate', as: :validate_user
+
   resources :questions
 
   resources :notations do

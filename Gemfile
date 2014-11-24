@@ -9,6 +9,7 @@ gem 'mysql2'
 
 # Devise for teachers auth
 gem 'devise'
+gem 'safe_attributes'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

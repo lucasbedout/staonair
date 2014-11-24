@@ -1,10 +1,13 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
+  before_action :user_validated, except: [:index]
 
   # GET /exams
   # GET /exams.json
   def index
-    @exams = Exam.all
+    if current_user.valid
+      @exams = Exam.all
+    end
   end
 
   # GET /exams/1
@@ -66,7 +69,8 @@ class ExamsController < ApplicationController
   def validate
     @exam = Exam.find(params[:exam_id])
 
-    if @exam.user_id == current_user.id
+    # User is the king
+    if @exam.user_id == current_user.id || current_user.role == 'admin'
       @exam.notations.each do |notation|
         StudentMailer.exam_validation_email(notation).deliver
       end
@@ -75,6 +79,7 @@ class ExamsController < ApplicationController
         format.html { redirect_to @exam, notice: 'Exam was successfully validated.' }
         format.json { head :no_content }
       end
+    # User is not the king, au goulag
     else
       respond_to do |format|
         format.html { redirect_to @exam, :alert => "Only the exam owner can close it" }
