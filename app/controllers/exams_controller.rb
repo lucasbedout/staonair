@@ -75,11 +75,11 @@ class ExamsController < ApplicationController
         format.html { redirect_to @exam, notice: 'Exam was successfully validated.' }
         format.json { head :no_content }
       end
-    end
-
-    respond_to do |format|
-      format.html { redirect_to @exam, :alert => "Only the exam owner can close it" }
-      format.json { head :no_content }
+    else
+      respond_to do |format|
+        format.html { redirect_to @exam, :alert => "Only the exam owner can close it" }
+        format.json { head :no_content }
+      end
     end
   end
 
