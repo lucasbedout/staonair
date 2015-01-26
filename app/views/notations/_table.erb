@@ -17,7 +17,7 @@
   <% @notations.each do |notation| %>
       <tr>
         <td class="idbooster"><%= notation.student %></td>
-        <td><%= notation.mark %></td>
+        <td><%= "%g" % notation.mark %></td>
         <td><%= notation.appreciation %></td>
         <td><%= link_to 'Show', notation %></td>
         <td><%= link_to 'Edit', edit_notation_path(notation) %></td>

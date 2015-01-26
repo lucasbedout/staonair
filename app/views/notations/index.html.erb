@@ -1,9 +1,11 @@
 <h1>Listing notations</h1>
 
+<div class="row">
+    <%= link_to 'New Notation', new_notation_path, :class => 'btn btn-primary' %>
+</div>
+
 <% if @notations.any? %>
     <%= render 'table' %>
 <% end %>
 
 <br>
-
-<%= link_to 'New Notation', new_notation_path, :class => 'btn btn-primary' %>

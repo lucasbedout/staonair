@@ -1,6 +1,6 @@
 <p>
   <strong>Mark:</strong>
-  <%= @question.mark %> on <%= @question.points %>
+  <%= "%g" % @question.mark %> on <%= "%g" % @question.points %>
 </p>
 
 <p>
@@ -9,4 +9,6 @@
 </p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Notation', @question.notation %> |
+<%= link_to 'Exam', @question.exam %> |
 <%= link_to 'Back', :back %>

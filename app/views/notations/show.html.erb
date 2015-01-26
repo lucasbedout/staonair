@@ -9,7 +9,7 @@
   <% else %>
     <strong class="label label-danger">
   <% end %>
-        <%= @notation.mark.blank? ? 'No mark' : @notation.mark.to_s() + ' / 20' %></strong>
+        <%= @notation.mark.blank? ? 'No mark' : "%g" % @notation.mark.to_s() + ' / 20' %></strong>
     </strong>
 
 </p>
@@ -28,5 +28,6 @@
 
 <div class="row">
     <%= link_to 'Edit', edit_notation_path(@notation) %> |
+    <%= link_to 'Exam', @notation.exam %> |
     <%= link_to 'Back', :back %>
 </div>

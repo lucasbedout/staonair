@@ -12,7 +12,7 @@
   <% @questions.each do |question| %>
       <tr>
         <td><%= question.number %></td>
-        <td><%= question.mark %> / <%= question.points %></td>
+        <td><%= "%g" % question.mark %> / <%= "%g" % question.points %></td>
         <td><%= question.comment %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
