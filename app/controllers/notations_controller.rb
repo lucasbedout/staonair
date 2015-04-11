@@ -13,6 +13,7 @@ class NotationsController < ApplicationController
   # GET /notations/1.json
   def show
     @questions = @notation.questions
+    @question = Question.new
   end
 
   # GET /notations/new

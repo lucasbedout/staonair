@@ -10,8 +10,12 @@
       </ul>
     </div>
   <% end %>
-
-  <%= hidden_field_tag(:notation_id, params[:notation_id]) %>
+  
+  <% if params[:notation_id].blank? %>
+    <%= hidden_field_tag(:notation_id, params[:id]) %>
+  <% else %>  
+    <%= hidden_field_tag(:notation_id, params[:notation_id]) %>
+  <% end %>
 
   <div class="row">
     <%= f.label :number %>

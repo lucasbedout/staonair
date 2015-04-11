@@ -23,7 +23,8 @@
 <% end %>
 
 <div class="row">
-  <%= link_to 'New question', new_notation_question_path(@notation), :class => 'btn btn-primary' %>
+  <h3>New question</h3>
+  <%= render 'questions/form' %>
 </div>
 
 <div class="row">
