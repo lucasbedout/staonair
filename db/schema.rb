@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20141124201004) do
     t.string   "course"
     t.string   "exam_type"
     t.integer  "nb_questions"
-    t.double  "average"
-    t.double  "max"
-    t.double  "min"
+    t.integer  "average"
+    t.integer  "max"
+    t.integer  "min"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20141124201004) do
   create_table "notations", force: true do |t|
     t.integer  "exam_id"
     t.integer  "student"
-    t.double  "mark"
+    t.float    "mark",         limit: 24
     t.text     "results"
     t.text     "appreciation"
     t.integer  "user_id"
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 20141124201004) do
 
   create_table "questions", force: true do |t|
     t.integer  "notation_id"
-    t.integer  "number"
-    t.double  "mark"
-    t.double  "points"
+    t.float    "number",      limit: 24
+    t.float    "mark",        limit: 24
+    t.integer  "points"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"

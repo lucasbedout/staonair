@@ -3,7 +3,7 @@ class CreateNotations < ActiveRecord::Migration
     create_table :notations do |t|
       t.belongs_to :exam
       t.integer :student
-      t.double :mark
+      t.float :mark
       t.text :results
       t.text :appreciation
 
